@@ -84,7 +84,7 @@ input[type=text] {
 #full {
   width:69%; 
   position:fixed;
-  height: 75%;
+  height: 700px;
   top: 43%;
   left: 50%;
   -ms-transform: translateX(-50%) translateY(-50%);
