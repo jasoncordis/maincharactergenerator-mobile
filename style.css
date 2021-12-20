@@ -88,6 +88,9 @@ input[type=text] {
   transform: translate(-50%,-50%);
   border: 5px solid black;
   background-color: white;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+
 }
 
 #summary-text{
