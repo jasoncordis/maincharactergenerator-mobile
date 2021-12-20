@@ -1,0 +1,26 @@
+body {
+  font-family: "Lucida Console", Arial, serif;
+  }
+  
+h1{
+    text-align:center
+  }
+
+h3{
+    text-align:center
+  }
+
+#form{
+    text-align:center
+  }
+
+#summary{
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+
+.home {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
