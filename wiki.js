@@ -289,17 +289,26 @@ while(text.includes("&#91")){
 
   console.log(text)
 
- let ele = document.getElementById("summary");
- ele.innerHTML = text
- }
- else{
-       let ele = document.getElementById("summary");
-       ele.innerHTML = "Invalid movie, try a different one"
- }
-}else{
-  let ele = document.getElementById("summary");
-  ele.innerHTML = "TV shows not supported, try entering a movie"
+ let ele = document.getElementById('full');
+ 
+ if(document.getElementById("test")==null){
+    var text1 = document.createElement("div")
+    text1.innerHTML = text;
+    text1.id = "test"
+    ele.append(text1)
+  }
+  else {
+    document.getElementById("test").innerHTML = text;
+  }
 }
+  else{
+        let ele = document.getElementById("summary");
+        ele.innerHTML = "Invalid movie, try a different one"
+  }
+  }else{
+    let ele = document.getElementById("summary");
+    ele.innerHTML = "TV shows not supported, try entering a movie"
+  }
 } catch (e) {
  console.error(e);
 }

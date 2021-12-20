@@ -1,8 +1,13 @@
 body {
-  font-family: "Lucida Console", Arial, serif;
+  font-family: 'Oswald', Arial, serif;
+  background: url('background.png');
+  background-repeat: no-repeat;
+  background-position: 50% 10%;
+  background-attachment: fixed;
   }
   
 h1{
+  font-family: 'Limelight', Arial;
     text-align:center
   }
 
@@ -11,16 +16,84 @@ h3{
   }
 
 #form{
-    text-align:center
+    text-align:center;
   }
 
 #summary{
-    margin-right: 10%;
-    margin-left: 10%;
+  position: absolute;
+  margin-top: 75%;
+  width: 70%;
+  top: 80%;
+  left: 50%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
   }
 
 .home {
-  position: relative;
+  height: 10%;
   width: 100%;
+  text-align:center;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  z-index:1;
+}
+
+#childDiv{
+  margin-left:10%;
+  margin-right:10%;
+}
+
+input[type=text] {
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+#movieintro{
+  clear:both;
+  z-index: 0;
+  position: relative;
+  width: 70%;
+  height: 50%;
+  top: 20%;
+  left: 50%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+#poster {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   height: 100%;
+}
+
+.intro {
+  text-align: center;
+  font-size: 35px;
+  font-family: 'Limelight', Arial;
+}
+
+#full {
+  width:69%; 
+  overflow-y:scroll;
+  position:fixed;
+  height: 75%;
+  top: 43%;
+  left: 50%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  background-color:white;
+  border: 5px solid black;
+}
+
+#summary-text{
+  text-align: left;
+  color: black;
 }
