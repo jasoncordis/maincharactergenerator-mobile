@@ -97,3 +97,20 @@ input[type=text] {
   text-align: left;
   color: black;
 }
+
+#mainform{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#test {
+  margin-left: 7%;
+  margin-right: 7%;;
+  text-align: left;
+}
+
+.intro {
+  text-align: center;
+  font-size: 35px;
+  font-family: 'Limelight', Arial;
+}

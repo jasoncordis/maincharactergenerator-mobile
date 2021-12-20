@@ -90,6 +90,13 @@ try {
  const req = await fetch(url);
  const json = await req.json();
  text = json.parse.text["*"]
+
+ poster = text.substring(text.search('src="//upload.wikimedia.org/')+7);
+ console.log(poster);
+ poster = poster.substring(0, poster.search('"'));
+ console.log(poster);
+ poster = "https://" + poster;
+
  if(!text.includes("list of episodes")){
  text = text.substring(text.search("Edit section: Plot")+80)
  if(text.includes("Voice cast")){
@@ -289,16 +296,21 @@ while(text.includes("&#91")){
 
   console.log(text)
 
- let ele = document.getElementById('full');
- 
+ let ele = document.getElementById('mainform');
+
+ if(name.slice(-1)!='s')
+    name = name + "'s Movie"
+  else
+    name = name + "' Movie"
+
  if(document.getElementById("test")==null){
     var text1 = document.createElement("div")
-    text1.innerHTML = text;
+    text1.innerHTML =  "<br></br><p class = 'intro' > " + name + " <img id = poster src = " + poster  + " > </img> </p><br></br>" + text;
     text1.id = "test"
     ele.append(text1)
   }
   else {
-    document.getElementById("test").innerHTML = text;
+    document.getElementById("test").innerHTML =  "<br></br><p class = 'intro' > " + name + " <img id = poster src = " + poster  + " > </img> </p><br></br>" + text;
   }
 }
   else{
