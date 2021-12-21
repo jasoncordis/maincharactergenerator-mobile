@@ -9,6 +9,7 @@ window.onload=function(){
   || navigator.userAgent.match(/Windows Phone/i)
   ){
      document.getElementById("mobile").innerHTML = "mobile"
+     document.getElementById("inner").style.height = "800px";
    }
   else {
     document.getElementById("mobile").innerHTML = "computer"
