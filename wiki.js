@@ -304,13 +304,15 @@ while(text.includes("&#91")){
     name = name + "' Movie"
 
  if(document.getElementById("test")==null){
+    let height = window.innerHeight * .8
     var text1 = document.createElement("div")
-    text1.innerHTML =  "<br></br><p class = 'intro' > " + name + " <img id = poster src = " + poster  + " > </img> </p><br></br>" + text;
+    text1.innerHTML =  "<br></br><p class = 'intro' > " + name + "</p> <img id = poster src = " + poster  + " > </img> </p><br></br>" + '<div id = "summary-text">' + text + '</div>';
     text1.id = "test"
     ele.append(text1)
+    document.getElementById("inner").style.height = height + "px";
   }
   else {
-    document.getElementById("test").innerHTML =  "<br></br><p class = 'intro' > " + name + " <img id = poster src = " + poster  + " > </img> </p><br></br>" + text;
+    document.getElementById("test").innerHTML =  "<br></br><p class = 'intro' > " + name + " <img id = poster src = " + poster  + " > </img> <div id = 'summary-text'>" + text + "</div>";
   }
 }
   else{

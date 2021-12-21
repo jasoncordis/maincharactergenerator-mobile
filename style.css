@@ -1,7 +1,7 @@
-body {
+html,body{
   font-family: 'Oswald', Arial, serif;
-  background-color: darkred !important;
-  height: 100%;
+  height:100%;
+   width:100%;
   }
 
 h1{
@@ -10,26 +10,48 @@ h1{
   }
 
 h3{
-    text-align:center
-  }
-
-#form{
-    text-align:center;
-  }
-  html,
-  body {
-      height: 100%;
-  }
-  
-#full{
-  height: 500px;
-  border: 5px solid black;
-  background-color: white;
+  text-align:center
 }
 
-  .container {
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
+.intro {
+  text-align: center;
+  font-size: 35px;
+  font-family: 'Limelight', Arial;
+}
+
+#test{
+  text-align:center;
+}
+
+.labelmovie{
+  font-size: 30px;
+}
+
+#home{
+  margin-top: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#summary-text{
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align:left;
+}
+
+.cn {
+  display: table-cell;
+  height: 100vh;
+  width: 100vw;
+  background: gray;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#inner {
+  height: 80%;
+  width: 80%;
+  display: inline-block;
+  background: white;
+  overflow: auto;
+}
