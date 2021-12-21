@@ -9,9 +9,9 @@ window.onload=function(){
 
   var ele = document.getElementById("searchmovie");
  ele.innerHTML = '<br>'
- 
+
  var ele1 = document.getElementById("movielist");
- ele1.innerHTML = "<input type=\"radio\" id=\"gump\" name=\"movie\"> <label for=\"gump\">Forrest Gump &nbsp; </label> <input type=\"radio\" id=\"raiders\" name=\"movie\"><label for=\"raiders\"> &nbsp;  Raiders of the Lost Ark &nbsp; </label><input type=\"radio\" id=\"diehard\" name=\"movie\"><label for=\"diehard\">&nbsp;Die Hard &nbsp;  </label><input type=\"radio\" id=\"Clueless\" name=\"movie\"><label for=\"clueless\">&nbsp;Clueless&nbsp;</label> </label><input type = \"radio\" id=\"The Shining\" name=\"movie\"><label for = \"shining\">&nbsp;The Shining&nbsp;</label> <input type = \"radio\" id = \"The Wizard of Oz\" name = \"movie\"><label for = \"Wizard\"> &nbsp; The Wizard of Oz</label>"	
+ ele1.innerHTML = "<label for=\"gump\"><input type=\"radio\" id=\"gump\" name=\"movie\"> Forrest Gump &nbsp; </label> <label for=\"raiders\"> <input type=\"radio\" id=\"raiders\" name=\"movie\">&nbsp;  Raiders of the Lost Ark &nbsp; </label> <label for=\"casinoroyale\"><input type=\"radio\" id=\"casinoroyale\" name=\"movie\">&nbsp;Casino Royale &nbsp;  </label> <label for=\"Clueless\"> <input type=\"radio\" id=\"Clueless\" name=\"movie\">&nbsp; Clueless &nbsp; </label><label for = \"The Shining\"><input type = \"radio\" id=\"The Shining\" name=\"movie\">&nbsp;The Shining&nbsp;</label> <label for = \"The Wizard of Oz\"> <input type = \"radio\" id = \"The Wizard of Oz\" name = \"movie\">&nbsp; The Wizard of Oz</label> &nbsp <label for = \"Shrek\"> <input type = \"radio\" id = \"Shrek\" name = \"movie\"> &nbsp; Shrek</label>"	
  
  var listmovie = 1;
  
@@ -19,7 +19,7 @@ document.getElementById("listmovie").addEventListener("click", function(){
   var radio = document.getElementById("entermovie");
  radio.checked = false;
   var ele1 = document.getElementById("movielist");
- ele1.innerHTML = "<input type=\"radio\" id=\"gump\" name=\"movie\"> <label for=\"gump\">Forrest Gump &nbsp; </label> <input type=\"radio\" id=\"raiders\" name=\"movie\"><label for=\"raiders\"> &nbsp;  Raiders of the Lost Ark &nbsp; </label><input type=\"radio\" id=\"diehard\" name=\"movie\"><label for=\"diehard\">&nbsp;Die Hard &nbsp;  </label><input type=\"radio\" id=\"Clueless\" name=\"movie\"><label for=\"clueless\">&nbsp;Clueless&nbsp;</label> </label><input type = \"radio\" id=\"The Shining\" name=\"movie\"><label for = \"shining\">&nbsp;The Shining&nbsp;</label> <input type = \"radio\" id = \"The Wizard of Oz\" name = \"movie\"><label for = \"Wizard\"> &nbsp; The Wizard of Oz</label>"		
+ ele1.innerHTML =  "<label for=\"gump\"><input type=\"radio\" id=\"gump\" name=\"movie\"> Forrest Gump &nbsp; </label> <label for=\"raiders\"> <input type=\"radio\" id=\"raiders\" name=\"movie\">&nbsp;  Raiders of the Lost Ark &nbsp; </label> <label for=\"casinoroyale\"><input type=\"radio\" id=\"casinoroyale\" name=\"movie\">&nbsp;Casino Royale &nbsp;  </label> <label for=\"Clueless\"> <input type=\"radio\" id=\"Clueless\" name=\"movie\">&nbsp; Clueless &nbsp; </label><label for = \"The Shining\"><input type = \"radio\" id=\"The Shining\" name=\"movie\">&nbsp;The Shining&nbsp;</label> <label for = \"The Wizard of Oz\"> <input type = \"radio\" id = \"The Wizard of Oz\" name = \"movie\">&nbsp; The Wizard of Oz</label> &nbsp <label for = \"Shrek\"> <input type = \"radio\" id = \"Shrek\" name = \"movie\"> &nbsp; Shrek</label>"	
  var ele2 = document.getElementById("searchmovie");
  ele2.innerHTML = "<br>";
  listmovie = 1;
@@ -106,6 +106,10 @@ try {
  poster = "https://" + poster;
 
  if(!text.includes("list of episodes")){
+
+  title = text.substring(text.search("font-size: 125%; font-style: italic;") + 38)
+  title = title.substring(0, title.search("</th>"));
+
  text = text.substring(text.search("Edit section: Plot")+80)
  if(text.includes("Voice cast")){
   cast = text.substring(text.search("Voice cast"))
@@ -314,13 +318,13 @@ while(text.includes("&#91")){
  if(document.getElementById("test")==null){
     let height = window.innerHeight * .8
     var text1 = document.createElement("div")
-    text1.innerHTML =  "<br></br><p class = 'intro' > " + name + "</p> <img id = poster src = " + poster  + " > </img> </p><br></br>" + '<div id = "summary-text">' + text + '</div>';
+    text1.innerHTML =  "<br></br><p class = 'intro' > " + name + "</p>  <img id = poster src = " + poster  + " > </img> </p> <p class = 'intro' > Inspired by " + title + " </p><br></br>" + '<div id = "summary-text">' + text + '</div>';
     text1.id = "test"
     ele.append(text1)
     document.getElementById("inner").style.height = height + "px";
   }
   else {
-    document.getElementById("test").innerHTML =  "<br></br><p class = 'intro' > " + name + " <img id = poster src = " + poster  + " > </img> <div id = 'summary-text'>" + text + "</div>";
+    document.getElementById("test").innerHTML =  "<br></br><p class = 'intro' > " + name + "</p> <img id = poster src = " + poster  + " > </img> </p><br></br>" + '<div id = "summary-text">' + text + '</div>';
   }
 }
   else{
