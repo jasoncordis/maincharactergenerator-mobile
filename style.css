@@ -1,61 +1,11 @@
 
-  @media screen and (orientation:portrait) and (max-height: 1200px) {
-    inner{
-      height: 1100px;
-      width: 700px;
-    }
-    #summary-text{
-      font-size:20px;
-    }
-  } 
-
- @media screen and (orientation:portrait) and (max-height: 1500px) {
-   inner{
-     height: 1250px;
-     width: 710px;
-   }
-   #summary-text{
-    font-size:20px;
-  }
- }
-
- @media screen and (orientation:portrait) and (max-height: 2000px) {
+@media (min-width:320px) and (orientation:portrait) {
   inner{
-    height: 1600px;
-    width: 900px;
+    height:100vh;
+    width:100vw;
   }
   #summary-text{
-    font-size:20px;
-  }
-}
-
-@media screen and (orientation:landscape) and (max-height: 1200px) {
-  inner{
-    height: 700px;
-    width: 1100px;
-  }
-  #summary-text{
-    font-size:20px;
-  }
-} 
-
-@media screen and (orientation:landscape) and (max-height: 1500px) {
-  inner{
-    height: 710px;
-    width: 1250px;
-  }
-  #summary-text{
-    font-size:20px;
-  }
-}
-
-@media screen and (orientation:landscape) and (max-height: 2000px) {
-  inner{
-    height: 900px;
-    width: 1600px;
-  }
-  #summary-text{
-    font-size:20px;
+    font-size:30px;
   }
 }
 
@@ -64,6 +14,11 @@ html,body{
   font-family: 'Oswald', Arial, serif;
   height:100vh;
   width:100vw;
+  background: url('background.png');
+  background-repeat: no-repeat;
+  background-position: 50% 10%;
+  background-attachment: fixed;
+  background-color: darkred;
   }
 
 h1{
@@ -87,6 +42,11 @@ h3{
 
 .labelmovie{
   font-size: 30px;
+  font-family: 'Oswald', Arial, serif;
+}
+
+.mainform{
+  font-family: 'Noto Sans', sans-serif;
 }
 
 #home{
@@ -96,6 +56,7 @@ h3{
 }
 
 #summary-text{
+  font-family: 'Noto Sans', sans-serif;
   margin-left: 5%;
   margin-right: 5%;
   text-align:left;
@@ -105,10 +66,6 @@ h3{
   display: table-cell;
   height: 100vh;
   width: 100vw;
-  background: url('background.png');
-  background-repeat: no-repeat;
-  background-position: 50% 10%;
-  background-attachment: fixed;
   vertical-align: middle;
   text-align: center;
 }
