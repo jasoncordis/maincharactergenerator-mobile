@@ -38,18 +38,20 @@ document.getElementById("submit").addEventListener("click", function(){
 username = document.getElementById("user_name").value;
 if(listmovie == 1){
 var pick = document.getElementsByTagName('input');
-                    if(pick[2].checked)
-                    insertMainCharacter(41528, username)
-                    else if(pick[3].checked)
-                    insertMainCharacter(54166, username)
-                    else if(pick[4].checked)
-                    insertMainCharacter(97646, username)
-                    else if(pick[5].checked)
-                    insertMainCharacter(105872, username)
-                    else if(pick[6].checked)
-                    insertMainCharacter(1186616, username)
-                    else if(pick[7].checked)
-                    insertMainCharacter(561315, username)
+    if(pick[2].checked)
+    insertMainCharacter(41528, username)
+    else if(pick[3].checked)
+    insertMainCharacter(54166, username)
+    else if(pick[4].checked)
+    insertMainCharacter(930379, username)
+    else if(pick[5].checked)
+    insertMainCharacter(105872, username)
+    else if(pick[6].checked)
+    insertMainCharacter(1186616, username)
+    else if(pick[7].checked)
+    insertMainCharacter(561315, username)
+    else if(pick[8].checked)
+    insertMainCharacter(18717177, username)
 }
 else{
  var ele2 = document.getElementById('moviename').value;
