@@ -118,6 +118,12 @@ try {
   
  else if(text.includes("Edit section: Cast")){
   cast = text.substring(text.search("Edit section: Cast"))
+  if(cast.includes('th scope="row"')){
+    console.log('fuck you')
+    cast = cast.substring(cast.search('th scope="row">'+17))
+    cast = cast.substring(0, cast.search('</th>'))
+  }
+  console.log(cast)
 }
 
  cast = cast.substring(cast.search("<li>"))
@@ -128,7 +134,6 @@ try {
  if(cast.includes('<li>')){
       cast = cast.substring(cast.search('<li>')+4)
  }
-
 
  if(cast.includes("/wiki/"))
      cast = cast.substring(cast.search('>')+1)              
@@ -153,9 +158,10 @@ try {
   }
   cast = cast.substring(x)  
 
+  console.log(text)
  if(text.includes("Edit section: Cast")){     
+  text = text.substring(text.search('<p>'))
   text = text.substring(0,text.search("Edit section: Cast")-205) 
-  text = text.substring(text.search(">")+5)     
 
   while(text.includes("File:")){
     text1 = text.substring(text.search("div class"))
@@ -168,14 +174,17 @@ try {
     text=text.replace(text1,'')
     }
     
-
+    console.log(text)
+    
   while(text.includes("<")){
+    console.log('heyo')
     text1 = text.substring(text.search("<"), text.search(">")+1)
     text = text.replace(text1,'')
     if((text.length-text.search("<"))<50){
       break
       }
   }
+
 
 while(text.includes("&#91")){
   text1 = text.substring(text.search("&#91;"), text.search("&#93;")+5)
@@ -299,15 +308,24 @@ while(text.includes("&#91")){
     }
 
   }
-  
   text = text.replaceAll("<br><br><br><br>", "<br><br>")
   text = text.substring(0, text.lastIndexOf('.')+1)
   while(text.search("<br>")==0){
     text = text.substring(4);
   }
+
   text = text += "<br><br><br><br>"
 
   console.log(text)
+
+  if(text.includes("Voice cast[edit]")){
+    console.log(text.search("Voice cast"))
+    text = text.substring(0, text.search("Voice cast"))
+    console.log("pussseyso")
+    }
+
+    console.log(text);
+
 
  let ele = document.getElementById('mainform');
 
@@ -331,12 +349,26 @@ while(text.includes("&#91")){
   }
 }
   else{
-        let ele = document.getElementById("summary");
-        ele.innerHTML = "Invalid movie, try a different one"
+        let ele = document.getElementById('mainform');
+        if(document.getElementById("test")==null){
+          var text1 = document.createElement("div")
+          text1.innerHTML = "Invalid movie, try a different one"
+          text1.id = "test"
+          ele.append(text1)
+        }
+        else
+          document.getElementById('test').innerHTML = "Invalid movie, try a different one"
   }
   }else{
-    let ele = document.getElementById("summary");
-    ele.innerHTML = "TV shows not supported, try entering a movie"
+    let ele = document.getElementById('mainform');
+    if(document.getElementById("test")==null){
+      var text1 = document.createElement("div")
+      text1.innerHTML = "TV shows not supported, try entering a movie"
+      text1.id = "test"
+      ele.append(text1)
+    }
+    else
+      document.getElementById('test').innerHTML = "TV shows not supported, try entering a movie"
   }
 } catch (e) {
  console.error(e);
